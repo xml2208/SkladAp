@@ -1,4 +1,4 @@
-package com.example.sklad
+package com.example.sklad.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,6 +11,7 @@ class ItemAdapter(
     private val listener: (String) -> Unit,
 ) : ListAdapter<ItemAdapter.ListItem, ItemAdapter.ItemViewHolder>(DiffCallback) {
 
+    private lateinit var itemL: ListItem
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             ItemViewBinding.inflate(
@@ -29,6 +30,7 @@ class ItemAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: ListItem) {
+            itemL = item
             with(binding) {
                 nameItem.text = item.title
                 quantityItem.text = item.quantity.toString()
@@ -46,6 +48,5 @@ class ItemAdapter(
         override fun areContentsTheSame(oldItem: ListItem, newItem: ListItem): Boolean {
             return oldItem.title == newItem.title && oldItem.quantity == newItem.quantity
         }
-
     }
 }

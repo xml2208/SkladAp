@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CodeInputActivity">
+    tools:context=".signInPhone.CodeInputActivity">
 
     <EditText
         android:id="@+id/code_et"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:autofillHints=""
-        android:hint="Enter Code"
+        android:hint="@string/enter_code"
         android:inputType="numberPassword" />
 
     <Button
@@ -22,6 +22,6 @@
         android:layout_below="@id/code_et"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:text="Sign In" />
+        android:text="@string/sign_in" />
 
 </RelativeLayout>

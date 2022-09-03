@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    tools:context=".PhoneInputActivity">
+    tools:context=".signInPhone.PhoneInputActivity">
 
     <EditText
         android:id="@+id/phone_et"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:autofillHints=""
-        android:hint="Enter Your Phone Number"
+        android:hint="@string/enter_your_phone_number"
         android:inputType="phone" />
 
     <Button
@@ -22,5 +22,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone_et"
         android:layout_centerInParent="true"
-        android:text="Continue"/>
+        android:text="@string/continue_button"/>
 </RelativeLayout>

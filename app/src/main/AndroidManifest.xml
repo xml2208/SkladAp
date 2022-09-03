@@ -5,7 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name=".App"
+        android:name=".data.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Sklad"
         tools:targetApi="m">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,16 +22,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".signInPhone.SignInActivity"
             android:exported="true" />
         <activity
-            android:name=".CodeInputActivity"
+            android:name=".signInPhone.CodeInputActivity"
             android:exported="false" />
         <activity
-            android:name=".PhoneInputActivity"
+            android:name=".signInPhone.PhoneInputActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false">
         </activity>
     </application>

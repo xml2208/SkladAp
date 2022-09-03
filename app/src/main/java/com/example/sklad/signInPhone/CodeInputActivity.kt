@@ -1,11 +1,12 @@
-package com.example.sklad
+package com.example.sklad.signInPhone
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.sklad.ui.MainActivity
+import com.example.sklad.data.SkladRepository
 import com.example.sklad.databinding.ActivityCodeInputBinding
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider

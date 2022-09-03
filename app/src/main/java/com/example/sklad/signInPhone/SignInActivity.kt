@@ -1,13 +1,13 @@
-package com.example.sklad
+package com.example.sklad.signInPhone
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sklad.ui.LoginActivity
 import com.example.sklad.databinding.ActivitySignInBinding
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var vb: ActivitySignInBinding
-    private val repo = SkladRepository.get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

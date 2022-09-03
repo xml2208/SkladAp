@@ -1,25 +1,39 @@
-package com.example.sklad
+package com.example.sklad.ui
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
+import com.example.sklad.data.SkladRepository
+import com.example.sklad.model.Item
 import com.example.sklad.databinding.FragmentEditBinding
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
-class EditFragment : Fragment() {
-
+class EditFragment : DialogFragment() {
     private var _viewBinding: FragmentEditBinding? = null
     private val viewBinding get() = _viewBinding!!
     private val skladRepo by lazy { SkladRepository(context!!.applicationContext) }
 
+    companion object {
+        fun newInstance(id: String): EditFragment {
+            val args = Bundle().apply {
+                putString("id", id)
+            }
+            return EditFragment().apply {
+                arguments = args
+            }
+        }
+    }
+
+    private val id: String by lazy { arguments!!.getString("id")!! }
     private val currentDocument by lazy {
-        skladRepo.skladCollection.document(DetailFragmentArgs.fromBundle(requireArguments()).itemId)
+        skladRepo.skladCollection.document(id)
     }
 
     override fun onCreateView(
@@ -40,26 +54,32 @@ class EditFragment : Fragment() {
 
         viewBinding.saveBtn.setOnClickListener {
             updateItem()
-        }
-        viewBinding.cancelBtn.setOnClickListener {
-            findNavController().popBackStack()
+            dismiss()
         }
     }
 
     private fun updateUi(title: String, quantity: Long) {
         viewBinding.apply {
             itemName.setText(title, TextView.BufferType.EDITABLE)
-            iQuantity.setText(quantity.toString(), TextView.BufferType.EDITABLE)
+            iQuantity.apply {
+                setText(quantity.toString(), TextView.BufferType.EDITABLE)
+                requestFocus()
+                setSelection(text!!.length)
+                val imm =
+                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+            }
         }
     }
 
+
     private fun updateItem() = lifecycleScope.launch {
         val name = viewBinding.itemName.text.toString()
-        val quantity = viewBinding.iQuantity.text.toString().toLong()
+        val quantity = viewBinding.iQuantity.text.toString()
 
-        currentDocument.update(Item(name, quantity).asMap()).await()
-
-        findNavController().popBackStack()
+        currentDocument.apply {
+            update(Item(name, quantity.toLong()).asMap()).await()
+        }
     }
 
     override fun onDestroyView() {

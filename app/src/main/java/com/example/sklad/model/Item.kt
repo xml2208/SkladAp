@@ -1,4 +1,4 @@
-package com.example.sklad
+package com.example.sklad.model
 
 import com.firebase.ui.firestore.SnapshotParser
 
@@ -17,5 +17,4 @@ data class Item(val title: String, val quantity: Long) {
             )
         }
     }
-
 }

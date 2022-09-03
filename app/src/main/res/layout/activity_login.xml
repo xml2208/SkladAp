@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".LoginActivity">
+    tools:context=".ui.LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_et"
@@ -18,6 +18,7 @@
         app:startIconDrawable="@drawable/person_icon">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_et"
         android:layout_margin="30dp"
-        android:hint="Parol"
+        android:hint="@string/parol"
         app:endIconMode="password_toggle"
         app:startIconDrawable="@drawable/lock_icon">
 
@@ -49,7 +50,7 @@
         android:layout_marginEnd="30dp"
         android:background="@color/white"
         android:src="@drawable/arrow_icon"
-        android:text="Kirish" />
+        android:text="@string/kirish" />
 
     <ProgressBar
         android:id="@+id/progressBar"

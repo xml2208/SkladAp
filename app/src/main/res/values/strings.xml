@@ -7,4 +7,15 @@
     <string name="save_btn">Saqlash</string>
     <string name="item_name">Mahsulot*</string>
     <string name="item_quantity">Soni*</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="sign_in">Sign In</string>
+    <string name="parol">Parol</string>
+    <string name="kirish">Kirish</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="continue_button">Continue</string>
+    <string name="add">add</string>
+    <string name="mahsulot">Mahsulot</string>
+    <string name="soni">Soni</string>
+    <string name="sign_in_with_phone">Sign In with phone</string>
+    <string name="sign_in_with_email">Sign In with email</string>
 </resources>

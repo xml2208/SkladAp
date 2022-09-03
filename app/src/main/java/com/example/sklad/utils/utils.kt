@@ -16,7 +16,6 @@ fun DocumentReference.listenUpdatesFlow(): Flow<DocumentSnapshot> = callbackFlow
         if (exception != null) {
             cancel(CancellationException(exception))
         }
-
         if (event != null) {
             trySend(event)
         }
@@ -34,12 +33,10 @@ fun CollectionReference.listenUpdatesFlow(): Flow<QuerySnapshot> = callbackFlow 
         if (exception != null) {
             cancel(CancellationException(exception))
         }
-
         if (event != null) {
             trySend(event)
         }
     }
-
     awaitClose {
         Log.d("SkladApp", "listenUpdatesFlow: closing ${this@listenUpdatesFlow.id}")
         listener.remove()

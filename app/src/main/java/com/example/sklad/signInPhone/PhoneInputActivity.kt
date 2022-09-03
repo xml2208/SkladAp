@@ -1,21 +1,18 @@
-package com.example.sklad
+package com.example.sklad.signInPhone
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.lifecycle.lifecycleScope
+import com.example.sklad.ui.MainActivity
+import com.example.sklad.data.SkladRepository
 import com.example.sklad.databinding.ActivityPhoneInputBinding
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import java.util.concurrent.TimeUnit
-import com.google.firebase.auth.FirebaseUser
-import kotlinx.coroutines.launch
 
 
 class PhoneInputActivity : AppCompatActivity() {
