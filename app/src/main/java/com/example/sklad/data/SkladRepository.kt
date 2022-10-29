@@ -24,6 +24,8 @@ class SkladRepository(private val context: Context) {
                 if (it["name"] == user.name && it["password"] == user.password) {
                     prefManager.saveLoginDetails(name, password)
                     return true
+                } else {
+                    Toast.makeText(context, "login yoki parolda xatolik bor!!!", Toast.LENGTH_SHORT).show()
                 }
             }
             return false

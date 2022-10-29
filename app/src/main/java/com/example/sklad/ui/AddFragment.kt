@@ -23,6 +23,7 @@ class AddFragment : DialogFragment() {
         _binding = DialogFragmentBinding.inflate(LayoutInflater.from(context))
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
@@ -42,5 +43,4 @@ class AddFragment : DialogFragment() {
         val quantity = binding.itemQuantity.text.toString().toLong()
         skladRepo.skladCollection.add(Item(name, quantity).asMap())
     }
-
 }

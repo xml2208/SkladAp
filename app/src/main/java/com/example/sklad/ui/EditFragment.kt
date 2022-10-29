@@ -56,6 +56,10 @@ class EditFragment : DialogFragment() {
             updateItem()
             dismiss()
         }
+        viewBinding.deleteBtn.setOnClickListener {
+            deleteItem()
+            dismiss()
+        }
     }
 
     private fun updateUi(title: String, quantity: Long) {
@@ -80,6 +84,10 @@ class EditFragment : DialogFragment() {
         currentDocument.apply {
             update(Item(name, quantity.toLong()).asMap()).await()
         }
+    }
+
+    private fun deleteItem() = lifecycleScope.launch {
+        currentDocument.delete()
     }
 
     override fun onDestroyView() {

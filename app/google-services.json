@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "282529685947",
+    "firebase_url": "https://sklad-app-c2a7b-default-rtdb.firebaseio.com",
+    "project_id": "sklad-app-c2a7b",
+    "storage_bucket": "sklad-app-c2a7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282529685947:android:6ecad338b073f00f4c249e",
+        "android_client_info": {
+          "package_name": "com.example.sklad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282529685947-cl7pvc1sobpfqj9ntm9b3b8fs4sm8aaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sklad",
+            "certificate_hash": "e39f51e9b2373a4d247a86de9621638bf6fe8602"
+          }
+        },
+        {
+          "client_id": "282529685947-bo40r17k8b2or1ubdh2dus0htas0tk9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOnKDg3CQNCqWBWYleSgr-Wkpnx6HgIys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282529685947-bo40r17k8b2or1ubdh2dus0htas0tk9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
